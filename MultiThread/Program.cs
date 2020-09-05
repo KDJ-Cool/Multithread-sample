@@ -6,22 +6,30 @@ namespace MultiThread
 {
     class Program
     {
+        // USEFUL MATERIALS
+        // https://cezarywalenciuk.pl/blog/programing/asynchroniczny-c--threadthreadpool-iasyncresult-task-api-i-async-i-await
+        // https://docs.microsoft.com/pl-pl/dotnet/csharp/language-reference/operators/await
+        // https://docs.microsoft.com/pl-pl/dotnet/csharp/async
+        // https://www.c-sharpcorner.com/article/task-and-thread-in-c-sharp/
+        // https://exceptionnotfound.net/using-async-and-await-in-asp-net-what-do-these-keywords-mean/
+
+
         public static int SharedResource { get; set; }
         public static object Locker = 0;
 
         static void Main(string[] args)
         {
-            // StartThreadExample();
+            StartThreadExample();
 
             // StartTaskExample();
             // StartAsyncExample();
-            StartLockExample();
+            // StartLockExample();
             Console.WriteLine("DOING MY STUFF");
         }
 
         private static void StartThreadExample()
         {
-            // IterationExample();
+            IterationExample();
 
             new Example("one_thousand");
             new Example("ten_thousand");
